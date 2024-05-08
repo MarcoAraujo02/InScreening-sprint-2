@@ -13,5 +13,10 @@ namespace InScreening_sprint_2.Controllers
         {
             return View();
         }
+
+        public IActionResult Lista()
+        {
+            return View();
+        }
     }
 }
