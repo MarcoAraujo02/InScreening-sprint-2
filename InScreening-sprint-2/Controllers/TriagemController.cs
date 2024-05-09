@@ -8,5 +8,15 @@ namespace InScreening_sprint_2.Controllers
         {
             return View();
         }
+
+        public IActionResult Triagem()
+        {
+            return View();
+        }
+
+        public IActionResult ListaTr()
+        {
+            return View();
+        }
     }
 }

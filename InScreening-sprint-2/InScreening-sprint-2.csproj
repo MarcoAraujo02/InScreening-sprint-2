@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Hospital\" />
-    <Folder Include="Views\Triagem\" />
   </ItemGroup>
 
 </Project>
