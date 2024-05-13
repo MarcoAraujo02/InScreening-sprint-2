@@ -9,7 +9,7 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
-        public IActionResult Cadastro() 
+        public IActionResult Cadastro()
         {
             return View();
         }
