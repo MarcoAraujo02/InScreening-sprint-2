@@ -30,7 +30,7 @@ namespace InScreening_sprint_2.Migrations
                     Rua = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Cidade = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Estado = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Comprimento = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Complemento = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Numero = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>

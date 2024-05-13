@@ -66,7 +66,7 @@ namespace InScreening_sprint_2.Models
 
 
         [Required]
-        public string Comprimento { get; set; }
+        public string Complemento { get; set; }
 
 
         [Required]

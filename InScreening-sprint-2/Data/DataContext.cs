@@ -11,6 +11,11 @@ namespace InScreening_sprint_2.Data
         }
 
         public DbSet<User> Usuarios { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<Hospital> Hospital { get; set; }
+        public DbSet<Triagem> Triagem { get; set; }
+     
+
     }
 }
 
