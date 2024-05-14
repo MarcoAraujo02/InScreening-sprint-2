@@ -43,7 +43,7 @@
 </head>
 <body>
 
-    <form asp-controller="User" asp-action="Login" method="post">
+    <form asp-controller="User" asp-action="Cadastrar" method="post">
         <h1 class="titulo2">Cadastro</h1>
         <br />
 
@@ -79,25 +79,25 @@
 
         <div class="mb-3">
             <label for="" class="titulo">Orgao Emissor</label>
-            <input name="Oe" type="text" class="form-control"  aria-describedby="emailHelp">
+            <input name="Orgao_emissor" type="text" class="form-control"  aria-describedby="emailHelp">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Filiacao Paterna</label>
-            <input name="FP" type="text" class="form-control" aria-describedby="emailHelp">
+            <input name="F_paterna" type="text" class="form-control" aria-describedby="emailHelp">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Filiacao Materna</label>
-            <input name="FM" type="text" class="form-control" aria-describedby="emailHelp">
+            <input name="F_materna" type="text" class="form-control" aria-describedby="emailHelp">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Data de nascimento</label>
-            <input name="DT" type="text" class="form-control" aria-describedby="emailHelp">
+            <input name="Nascimento" type="text" class="form-control" aria-describedby="emailHelp">
         </div>
 
 
@@ -109,6 +109,7 @@
 
 
         <h3 class="titulo3">Endereco</h3>
+
 
         <div class="mb-3">
             <label for="" class="titulo">Cep</label>

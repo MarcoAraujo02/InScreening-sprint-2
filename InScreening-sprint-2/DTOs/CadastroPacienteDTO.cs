@@ -6,7 +6,7 @@ namespace InScreening_sprint_2.DTOs
     {
 
         [Required]
-        public string Name { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
 
 
         [Required]
@@ -27,18 +27,18 @@ namespace InScreening_sprint_2.DTOs
         public string Rg { get; set; } = string.Empty;
 
         [Required]
-        public string Orgao_Emissor { get; set; } = string.Empty;
+        public string Orgao_emissor { get; set; } = string.Empty;
 
         
-        public string F_Paterna { get; set; } = string.Empty;
+        public string F_paterna { get; set; } = string.Empty;
 
 
         [Required]
-        public string F_Materna { get; set; } = string.Empty;
+        public string F_materna { get; set; } = string.Empty;
 
 
         [Required]
-        public string Dt_Nascimento { get; set; } = string.Empty;
+        public string Nascimento { get; set; } = string.Empty;
 
 
         [Required]

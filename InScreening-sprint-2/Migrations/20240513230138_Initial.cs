@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InScreening_sprint_2.Migrations
 {
     /// <inheritdoc />
-    public partial class Second : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,7 +59,7 @@ namespace InScreening_sprint_2.Migrations
                     table.PrimaryKey("PK_Triagem", x => x.id);
                 });
 
-                migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -86,7 +86,7 @@ namespace InScreening_sprint_2.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
                 });
-            }
+        }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -99,6 +99,9 @@ namespace InScreening_sprint_2.Migrations
 
             migrationBuilder.DropTable(
                 name: "Triagem");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
         }
     }
 }
