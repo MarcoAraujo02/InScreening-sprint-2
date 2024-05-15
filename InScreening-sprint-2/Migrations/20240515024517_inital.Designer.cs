@@ -12,8 +12,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace InScreening_sprint_2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240513230138_Initial")]
-    partial class Initial
+    [Migration("20240515024517_inital")]
+    partial class inital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,11 +37,11 @@ namespace InScreening_sprint_2.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 

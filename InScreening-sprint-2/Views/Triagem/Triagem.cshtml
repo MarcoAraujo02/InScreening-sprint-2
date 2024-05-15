@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
     <style>
         .formulario {
-            margin-top: 10%;
+            margin-top: 4%;
             margin-left: 25%;
             width: 50%
         }
@@ -33,68 +33,35 @@
         .aa {
             margin-left: 5%;
             font-size: 50px;
-            margin-top: 155%
+            margin-top: 15%
         }
     </style>
 </head>
 <body>
 
 
-    <form class="formulario">
-        <h1 class="titulo2">Cadastrar Funcionario</h1>
+    <form class="formulario" asp-controller="Triagem"  asp-action="Cadastrar" method="post">
+        <h1 class="titulo2">Triagem</h1>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Nome</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="titulo">Data Inicio</label>
+            <input name="Datainicio" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Cpf</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="titulo">Data fim</label>
+            <input name="Datafim" type="text" class="form-control" id="exampleInputPassword1">
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Email</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="titulo">Sintomas</label>
+            <input name="Sintomas" type="text" class="form-control" id="exampleInputPassword1">
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">RG</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="titulo">Prioridade</label>
+            <input name="Prioridade" type="text" class="form-control" id="exampleInputPassword1">
 
         </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Filiacao Paterna</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Filiacao Materna</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Data nascimento</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Orgao Emissor</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Sexo</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
-
-
-
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />

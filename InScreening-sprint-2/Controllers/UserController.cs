@@ -23,8 +23,13 @@ namespace InScreening_sprint_2.Controllers
             _logger = logger;
         }
 
-
+        
         public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Index()
         {
             return View();
         }
@@ -35,15 +40,17 @@ namespace InScreening_sprint_2.Controllers
             var find = _dataContext.Usuarios.FirstOrDefault(x => x.Email == request.Email);
             if (find == null)
             {
-                return NotFound();
+                return BadRequest("Email Invalido");
             }
+
             if (find.Senha != request.Senha)
             {
                 return BadRequest("Senha inválida");
             }
-            return View("Login");
-        }
 
+        
+            return View("~/Views/Triagem/index.cshtml");
+        }
 
 
         public IActionResult Cadastro()
@@ -90,6 +97,11 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
 
     }
 }

@@ -8,15 +8,14 @@ namespace InScreening_sprint_2.Models
         public int Id { get; set; }
 
         [Required]
-        public string Cpf { get; set; }
+        public string Nome { get; set; }
 
         [Required]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public string nome { get; set; }
+        public string Cpf{ get; set; }
 
-        [Required]
-        public string status { get; set; }
+
     }
 }

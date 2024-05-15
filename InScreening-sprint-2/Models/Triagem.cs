@@ -11,7 +11,6 @@ namespace InScreening_sprint_2.Models
         [Required]
         public DateTime DataInicio { get; set; }
 
-
         [Required]
         public DateTime DataFim { get; set; }
 

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InScreening_sprint_2.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class inital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,8 +18,8 @@ namespace InScreening_sprint_2.Migrations
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     Cpf = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     status = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>

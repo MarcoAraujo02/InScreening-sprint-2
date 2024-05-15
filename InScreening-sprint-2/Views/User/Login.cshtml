@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
     <style>
         .formulario {
-            margin-top:10%;
+            margin-top: 10%;
             margin-left: 25%;
             width: 50%
         }
 
         .titulo {
-            margin-left: 48%
+            margin-left: 49%
+        }
+
+        .titulo2 {
+            margin-left: 46%
         }
 
         .btn {
@@ -23,38 +27,35 @@
         }
 
         .criar {
-            margin-left: 45%
+            margin-left: 48%
         }
 
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 155%
-        }
     </style>
 </head>
 <body>
 
 
     <form asp-controller="User" asp-action="Logar" method="post">
-        <h1 class="titulo">Login</h1>
+        <h1 class="titulo2">Login </h1>
+        <br />
+
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputPassword1" class="titulo">Email</label>
+            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required> 
 
         </div>
+
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Senha</label>
-            <input name="Senha" type="password" class="form-control" id="exampleInputPassword1">
+            <input name="Senha" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
+
+
         <button type="submit" class="btn btn-primary">Submit</button>
-        <br /><br />
-        <a class="" asp-area="" asp-controller="User" asp-action="Cadastro">Criar nova conta</a>
-
+        <br />
+        <br />
+        <a class="criar" asp-area="" asp-controller="User" asp-action="Cadastro">Criar Conta</a>
     </form>
-
- 
-
 </body>
 </html>
