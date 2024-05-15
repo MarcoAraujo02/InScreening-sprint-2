@@ -53,7 +53,7 @@
                     <td>@funcionario.Email</td>
                     <td>
                         <a href="">Editar</a>
-                        <a href="">Deletar</a>
+                        <a asp-controller="Funcionario" asp-action="Deletar" asp-route-id="@funcionario.Id">Deletar</a>
                     </td>
                 </tr>
             }

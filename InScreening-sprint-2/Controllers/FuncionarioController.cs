@@ -91,5 +91,16 @@ namespace InScreening_sprint_2.Controllers
 
             return View(funcionarios);
         }
+
+
+        public IActionResult Deletar(int id)
+        {
+            var funcionario = _dataContext.Funcionario.Find(id);
+
+            _dataContext.Remove(funcionario);
+            _dataContext.SaveChanges();
+            return RedirectToAction("Lista");
+        }
+
     }
 }

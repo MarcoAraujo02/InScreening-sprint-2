@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model List< InScreening_sprint_2.Models.Triagem>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,27 +35,31 @@
     <table class="tabela" bgcolor="black" width="500">
 
         <tr bgcolor="grey" align="center">
-            <th width="100">Triagem</th>
-            <th width="100">Nome</th>
-            <th width="100">Data</th>
-            <th width="100">Status</th>
-            <th width="100">Exame</th>
-            <th width="100">Horario</th>
+            <th width="100">Data de Inicio</th>
+            <th width="100">Data de Fim</th>
+            <th width="100">Sintomas</th>
+            <th width="100">Prioridade</th>
+            <th width="100">Editar</th>
    
 
         </tr>
         <tbody>
+            @foreach (var triagem in Model)
+            {
+                <tr bgcolor="lightgrey" align="center">
+                <td>@triagem.DataInicio</td>
+                <td>@triagem.DataFim</td>
+                <td>@triagem.Sintomas</td>
+                <td>@triagem.Prioridade</td>
+                    <td>
+                        <a href="">Editar</a>
+                        <a asp-controller="Triagem" asp-action="Deletar" asp-route-id="@triagem.id">Deletar</a>
+                    </td>
+                </tr>
+          
 
-            <tr bgcolor="lightgrey" align="center">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            }
          
-            </tr>
-
         </tbody>
 
     </table>

@@ -2,6 +2,7 @@
 using InScreening_sprint_2.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using InScreening_sprint_2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InScreening_sprint_2.Controllers
 {
@@ -54,9 +55,20 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
-        public IActionResult ListaTr()
+        public async Task<IActionResult> ListaTr()
         {
-            return View();
+            var triagem = await _dataContext.Triagem.ToListAsync();
+
+            return View(triagem);
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            var triagem = _dataContext.Triagem.Find(id);
+
+             _dataContext.Remove(triagem);
+            _dataContext.SaveChanges();
+            return RedirectToAction("ListaTr");
         }
     }
 }

@@ -4,6 +4,7 @@ using InScreening_sprint_2.Models;
 using InScreening_sprint_2.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace InScreening_sprint_2.Controllers
 {
@@ -59,6 +60,12 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
+        public async Task<IActionResult> Lista()
+        {
+            var usuarios = await _dataContext.Usuarios.ToListAsync();
+
+            return View(usuarios);
+        }
 
         public IActionResult Cadastrar(CadastroPacienteDTO request)
         {
@@ -102,6 +109,17 @@ namespace InScreening_sprint_2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult Deletar(int id)
+        {
+            var usuarios = _dataContext.Usuarios.Find(id);
+
+            _dataContext.Remove(usuarios);
+            _dataContext.SaveChanges();
+            return RedirectToAction("Lista");
+        }
+
 
     }
 }

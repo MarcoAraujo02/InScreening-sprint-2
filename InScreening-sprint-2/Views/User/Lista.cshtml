@@ -1,0 +1,90 @@
+﻿@model List< InScreening_sprint_2.Models.User>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .titulo {
+            margin-left: 37%;
+        }
+
+        .tabela {
+            margin-top: 5%;
+            margin-left: 15%;
+            text-align: left;
+        }
+
+    </style>
+    <link href="/static/css/listacl.css" rel="stylesheet">
+    <link href="/static/css/botao.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="btn-link-flash" role="alert" align="center">
+    </div>
+
+    <h1 class="titulo">Lista de funcionarios</h1>
+
+
+
+    <table class="tabela" bgcolor="black" width="500">
+
+        <tr bgcolor="grey" align="center">
+            <th width="100">Nome</th>
+            <th width="100">Cpf</th>
+            <th width="100">Email</th>
+            <th width="100">Senha</th>
+            <th width="100">Rg</th>
+            <th width="100">Orgao Emissor</th>
+            <th width="100">Filiacao Paterna</th>
+            <th width="100">Filiacao Materna</th>
+            <th width="100">Nascimento</th>
+            <th width="100">Sexo</th>
+            <th width="100">Cep</th>
+            <th width="100">Rua</th>
+            <th width="100">Cidade</th>
+            <th width="100">Estado</th>
+            <th width="100">Complemento</th>
+            <th width="100">Numero</th>
+            <th width="100">Editar</th>
+
+        </tr>
+        <tbody>
+            @foreach (var usuarios in Model)
+            {
+                <tr bgcolor="lightgrey" align="center">
+                    <td>@usuarios.Nome</td>
+                    <td>@usuarios.Cpf</td>
+                    <td>@usuarios.Email</td>
+                    <td>@usuarios.Senha</td>
+                    <td>@usuarios.Rg</td>
+                    <td>@usuarios.Orgao_emissor</td>
+                    <td>@usuarios.F_paterna</td>
+                    <td>@usuarios.F_materna</td>
+                    <td>@usuarios.Nascimento</td>
+                    <td>@usuarios.Sexo</td>
+                    <td>@usuarios.Cep</td>
+                    <td>@usuarios.Rua</td>
+                    <td>@usuarios.Cidade</td>
+                    <td>@usuarios.Estado</td>
+                    <td>@usuarios.Complemento</td>
+                    <td>@usuarios.Numero</td>
+                    <td>
+                        <a href="">Editar</a>
+                        <a asp-controller="User" asp-action="Deletar" asp-route-id="@usuarios.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>
