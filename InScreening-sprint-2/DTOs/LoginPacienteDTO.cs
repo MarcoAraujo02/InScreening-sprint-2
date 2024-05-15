@@ -7,6 +7,7 @@ namespace InScreening_sprint_2.DTOs
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
         
         [Required]
         public string Senha { get; set; }
