@@ -8,97 +8,106 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
     <style>
+        .formulario {
+            margin-top: 0%;
+            margin-left: 25%;
+            width: 50%
+        }
 
         .titulo {
-  
-            margin-left: 49%
+            margin-left: 48%
         }
 
         .btn {
-            margin-left: 47%
+            margin-left: 48%
         }
 
-        
-
-        .titulo2{
-            margin-left:44%;
+        .criar {
+            margin-left: 45%
         }
 
-        .titulo3{
-            margin-left:46%
+        .aa {
+            margin-left: 5%;
+            font-size: 50px;
+            margin-top: 155%
         }
 
-        .escrever{
-            width:800px;
-            margin-left: 21%;
+        .titulo2 {
+            margin-left: 40%;
+        }
+
+        .titulo3 {
+            margin-left: 42%
         }
     </style>
 </head>
 <body>
+    @model InScreening_sprint_2.Models.User
 
-    <form asp-controller="User" asp-action="Cadastrar" method="post">
+    <form asp-controller="User" asp-action="Alterar" method="post">
         <h1 class="titulo2">Cadastro</h1>
         <br />
 
         <div class="mb-3">
             <label for="" class="titulo">Nome</label>
-            <input class="escrever" name="Nome" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Nome" type="text" class="form-control" asp-for="Nome" />
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Cpf</label>
-            <input class="escrever" name="Cpf" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Cpf" type="text" class="form-control" asp-for="Cpf">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Email address</label>
-            <input class="escrever" name="Email" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Email" type="email" class="form-control" asp-for="Email">
         </div>
+
 
 
         <div class="mb-3">
             <label for="" class="titulo">Senha</label>
-            <input class="escrever" name="Senha" type="text" class="form-control" required>
+            <input name="Senha" type="text" class="form-control" asp-for="Senha">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Rg</label>
-            <input class="escrever" name="Rg" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Rg" type="text" class="form-control" asp-for="Rg">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Orgao Emissor</label>
-            <input class="escrever" name="Orgao_emissor" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Orgao_emissor" type="text" class="form-control" asp-for="Orgao_emissor">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Filiacao Paterna</label>
-            <input class="escrever" name="F_paterna" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="F_paterna" type="text" class="form-control"  asp-for="F_paterna">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Filiacao Materna</label>
-            <input class="escrever" name="F_materna" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="F_materna" type="text" class="form-control" asp-for="F_materna">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Data de nascimento</label>
-            <input class="escrever" name="Nascimento" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Nascimento" type="text" class="form-control" asp-for="Nascimento">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Sexo</label>
-            <input class="escrever" name="Sexo" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Sexo" type="text" class="form-control"  asp-for="Sexo">
         </div>
-        <br />
+
 
 
         <h3 class="titulo3">Endereco</h3>
@@ -106,41 +115,45 @@
 
         <div class="mb-3">
             <label for="" class="titulo">Cep</label>
-            <input class="escrever" name="Cep" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Cep" type="text" class="form-control"  asp-for="Cep">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Rua</label>
-            <input class="escrever" name="Rua" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Rua" type="text" class="form-control"  asp-for="Rua">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Cidade</label>
-            <input class="escrever" name="Cidade" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Cidade" type="text" class="form-control"   asp-for="Cidade">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Complemento</label>
-            <input class="escrever" name="Complemento" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Complemento" type="text" class="form-control"  asp-for="Complemento">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Estado</label>
-            <input class="escrever" name="Estado" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Estado" type="text" class="form-control" asp-for="Estado">
         </div>
 
 
         <div class="mb-3">
             <label for="" class="titulo">Numero</label>
-            <input class="escrever" name="Numero" type="text" class="form-control" aria-describedby="emailHelp" required>
+            <input name="Numero" type="text" class="form-control" asp-for="Numero">
         </div>
 
+
+        <input type="hidden" name="Id" value="@Model.Id">
+
+
         <button type="submit" class="btn btn-primary">Submit</button>
-        
+
 
     </form>
 </body>

@@ -1,6 +1,7 @@
 ﻿using InScreening_sprint_2.Data;
 using InScreening_sprint_2.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
 
 namespace InScreening_sprint_2.Controllers
@@ -34,6 +35,7 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
+   
         public IActionResult Cadastrar(CadastroFuncionarioDTO request)
         {
 
@@ -53,7 +55,7 @@ namespace InScreening_sprint_2.Controllers
 
             _dataContext.Add(novoFuncionario);
             _dataContext.SaveChanges();
-            return View("Login");
+            return View("~/Views/Hospital/Index.cshtml");
         }
 
 
@@ -87,9 +89,9 @@ namespace InScreening_sprint_2.Controllers
 
         public async Task<IActionResult> Lista()
         {
-            var funcionarios = await _dataContext.Funcionario.ToListAsync();
+            var funcionario = await _dataContext.Funcionario.ToListAsync();
 
-            return View(funcionarios);
+            return View(funcionario);
         }
 
 
@@ -102,5 +104,33 @@ namespace InScreening_sprint_2.Controllers
             return RedirectToAction("Lista");
         }
 
+
+        public async Task<IActionResult> Editar(int id)
+        {
+
+            var funcionario = await _dataContext.Funcionario.FindAsync(id);
+
+            return View(funcionario);
+        }
+
+
+        public IActionResult Alterar(int id,  CadastroFuncionarioDTO request)
+        {
+            var funcionario= _dataContext.Funcionario.Find(id);
+
+
+            funcionario.Nome = request.Nome;
+            funcionario.Cpf = request.Cpf;
+            funcionario.Email = request.Email;
+           
+
+            _dataContext.Update(funcionario);
+            _dataContext.SaveChanges();
+
+            return RedirectToAction("Lista", "Funcionario");
+        }
+
+
+            
+        }
     }
-}

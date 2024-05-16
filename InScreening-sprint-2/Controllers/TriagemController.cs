@@ -70,5 +70,30 @@ namespace InScreening_sprint_2.Controllers
             _dataContext.SaveChanges();
             return RedirectToAction("ListaTr");
         }
+
+        public async Task<IActionResult> Editar(int id)
+        {
+
+            var triagem = await _dataContext.Triagem.FindAsync(id);
+
+            return View(triagem);
+        }
+
+
+        public IActionResult Alterar(int id, CadastroTriagemDTO request)
+        {
+            var triagem = _dataContext.Triagem.Find(id);
+
+            triagem.DataInicio = request.Datainicio;
+            triagem.DataFim = request.Datafim;
+            triagem.Sintomas = request.Sintomas;
+            triagem.Prioridade = request.Prioridade;
+
+
+            _dataContext.Update(triagem);
+            _dataContext.SaveChanges();
+
+            return RedirectToAction("ListaTr", "Triagem");
+        }
     }
 }

@@ -5,6 +5,9 @@ namespace InScreening_sprint_2.DTOs
     public class CadastroFuncionarioDTO
     {
 
+
+        public int Id { get; set; }
+
         [Required]
    
         public string Nome{ get; set; } = string.Empty;

@@ -32,7 +32,7 @@ namespace InScreening_sprint_2.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/ Views/User/index.cshtml");
         }
 
 
@@ -120,6 +120,41 @@ namespace InScreening_sprint_2.Controllers
             return RedirectToAction("Lista");
         }
 
+        public async Task<IActionResult> Editar(int id)
+        {
 
+            var User = await _dataContext.Usuarios.FindAsync(id);
+
+            return View(User);
+        }
+
+
+        public IActionResult Alterar(int id, CadastroPacienteDTO request)
+        {
+            var user = _dataContext.Usuarios.Find(id);
+            
+            user.Nome = request.Nome;
+            user.Cpf = request.Cpf;
+            user.Email = request.Email;
+            user.Senha = request.Senha;
+            user.Rg = request.Rg;
+            user.Orgao_emissor = request.Orgao_emissor;
+            user.F_paterna = request.F_paterna;
+            user.F_materna = request.F_materna;
+            user.Nascimento = request.Nascimento;
+            user.Sexo = request.Sexo;
+            user.Cep = request.Cep;
+            user.Rua = request.Rua;
+            user.Cidade = request.Cidade;
+            user.Complemento = request.Complemento;
+            user.Estado = request.Estado;
+            user.Numero = request.Numero;
+
+
+            _dataContext.Update(user);
+            _dataContext.SaveChanges();
+
+            return RedirectToAction("Lista", "User");
+        }
     }
 }
