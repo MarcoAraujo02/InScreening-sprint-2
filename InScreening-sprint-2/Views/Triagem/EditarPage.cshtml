@@ -19,7 +19,7 @@
         }
 
         .titulo2 {
-            margin-left: 33%
+            margin-left: 24%
         }
 
         .btn {
@@ -38,35 +38,38 @@
     </style>
 </head>
 <body>
+    @model InScreening_sprint_2.Models.Triagem
 
-      
-
-    <form asp-controller="Funcionario" asp-action="Cadastrar" method="post">
-
-        <h1 class="titulo2">Casdastro do funcionario</h1>
+    <form asp-controller="Triagem" asp-action="AlterarTriagem" method="post">
+        <h1 class="titulo2">Cadastrar Funcionario</h1>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Nome</label>
-            <input n name="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+            <label for="exampleInputEmail1" class="titulo">Data de Inicio dos sintomas</label>
+            <input name="DataInicio" type="text" class="form-control" id="exampleInputEmail1" asp-for="DataInicio">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Cpf</label>
-            <input name="Cpf" type="text" class="form-control" id="exampleInputPassword1">
-
+            <label for="exampleInputPassword1" class="titulo">Data de fim dos sintomas</label>
+            <input name="Datafim" type="text" class="form-control" id="exampleInputPassword1" asp-for="DataFim">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Email</label>
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1">
-
+            <label for="exampleInputPassword1" class="titulo">Sintomas</label>
+            <input name="Sintomas" type="text" class="form-control" id="exampleInputPassword1" asp-for="Sintomas">
         </div>
-    
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Prioridade</label>
+            <input name="Prioridade" type="text" class="form-control" id="exampleInputPassword1" asp-for="Prioridade">
+        </div>
+
+
+
+        <input type="hidden" name="Id" value="@Model.id">
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
         <br />
-
     </form>
+
 </body>
 </html>

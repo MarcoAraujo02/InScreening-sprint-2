@@ -12,7 +12,7 @@
 
         .tabela {
             margin-top: 2%;
-            margin-left: 4%;
+            margin-left: 15%;
        
         }
 
@@ -104,8 +104,8 @@
                     <td>@usuarios.Complemento</td>
                     <td>@usuarios.Numero</td>
                     <td>
-                        <a asp-controller="User" asp-action="Editar" asp-route-id="@usuarios.Id">Editar</a>
-                        <a asp-controller="User" asp-action="Deletar" asp-route-id="@usuarios.Id">Deletar</a>
+                        <a asp-controller="User" asp-action="EditarPage" asp-route-id="@usuarios.Id">Editar</a>
+                        <a asp-controller="User" asp-action="DeletarPaciente" asp-route-id="@usuarios.Id">Deletar</a>
                     </td>
                 </tr>
             }

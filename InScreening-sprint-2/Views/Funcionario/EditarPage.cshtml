@@ -38,33 +38,27 @@
     </style>
 </head>
 <body>
-    @model InScreening_sprint_2.Models.Triagem
+ @model InScreening_sprint_2.Models.Funcionario
 
-    <form asp-controller="Triagem" asp-action="Alterar" method="post">
+    <form asp-controller="Funcionario" asp-action="AlterarFuncionario" method="post">
         <h1 class="titulo2">Cadastrar Funcionario</h1>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Data de Inicio dos sintomas</label>
-            <input name="DataInicio" type="text" class="form-control" id="exampleInputEmail1" asp-for="DataInicio">
+            <label for="exampleInputEmail1" class="titulo">Nome</label>
+            <input name="Nome" type="text" class="form-control" id="exampleInputEmail1" asp-for="Nome">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Data de fim dos sintomas</label>
-            <input name="Datafim" type="text" class="form-control" id="exampleInputPassword1" asp-for="DataFim">
+            <label for="exampleInputPassword1" class="titulo">Cpf</label>
+            <input name="Cpf" type="text" class="form-control" id="exampleInputPassword1" asp-for="Cpf">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Sintomas</label>
-            <input name="Sintomas" type="text" class="form-control" id="exampleInputPassword1" asp-for="Sintomas">
+            <label for="exampleInputPassword1" class="titulo">Email</label>
+            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" asp-for="Email">
         </div>
+  
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Prioridade</label>
-            <input name="Prioridade" type="text" class="form-control" id="exampleInputPassword1" asp-for="Prioridade">
-        </div>
-
-
-
-        <input type="hidden" name="Id" value="@Model.id">
+        <input type="hidden" name="Id" value="@Model.Id">
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />

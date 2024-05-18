@@ -30,13 +30,13 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
-        public IActionResult Cadastro()
+        public IActionResult CadastroPage()
         {
             return View();
         }
 
    
-        public IActionResult Cadastrar(CadastroFuncionarioDTO request)
+        public IActionResult CadastrarFuncionario(CadastroFuncionarioDTO request)
         {
 
             var funcionario = _dataContext.Funcionario.FirstOrDefault(x => x.Email == request.Email);
@@ -60,12 +60,12 @@ namespace InScreening_sprint_2.Controllers
 
 
 
-        public IActionResult Login()
+        public IActionResult LoginPage()
         {
             return View();
         }
 
-        public IActionResult Logar(LoginFuncionarioDTO request)
+        public IActionResult LogarFuncionario(LoginFuncionarioDTO request)
         {
             var find = _dataContext.Funcionario.FirstOrDefault(x => x.Email == request.Email);
             if (find == null)
@@ -81,13 +81,7 @@ namespace InScreening_sprint_2.Controllers
 
 
 
-        public IActionResult Exame()
-        {
-            return View();
-        }
-
-
-        public async Task<IActionResult> Lista()
+        public async Task<IActionResult> ListaFuncionario()
         {
             var funcionario = await _dataContext.Funcionario.ToListAsync();
 
@@ -95,17 +89,17 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Deletar(int id)
+        public IActionResult DeletarFuncionario(int id)
         {
             var funcionario = _dataContext.Funcionario.Find(id);
 
             _dataContext.Remove(funcionario);
             _dataContext.SaveChanges();
-            return RedirectToAction("Lista");
+            return RedirectToAction("ListaFuncionario");
         }
 
 
-        public async Task<IActionResult> Editar(int id)
+        public async Task<IActionResult> EditarPage(int id)
         {
 
             var funcionario = await _dataContext.Funcionario.FindAsync(id);
@@ -114,7 +108,7 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Alterar(int id,  CadastroFuncionarioDTO request)
+        public IActionResult AlterarFuncionario(int id,  CadastroFuncionarioDTO request)
         {
             var funcionario= _dataContext.Funcionario.Find(id);
 
@@ -127,7 +121,7 @@ namespace InScreening_sprint_2.Controllers
             _dataContext.Update(funcionario);
             _dataContext.SaveChanges();
 
-            return RedirectToAction("Lista", "Funcionario");
+            return RedirectToAction("ListaFuncionario", "Funcionario");
         }
 
 

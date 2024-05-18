@@ -25,10 +25,12 @@ namespace InScreening_sprint_2.Controllers
         }
 
         
-        public IActionResult Login()
+        public IActionResult LoginPage()
         {
             return View();
         }
+
+
 
         public IActionResult Index()
         {
@@ -36,7 +38,8 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Logar(LoginPacienteDTO request)
+
+        public IActionResult LogarPaciente(LoginPacienteDTO request)
         {
             var find = _dataContext.Usuarios.FirstOrDefault(x => x.Email == request.Email);
             if (find == null)
@@ -54,20 +57,24 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Cadastro()
+
+        public IActionResult CadastroPage()
         {
             return View();
         }
 
 
-        public async Task<IActionResult> Lista()
+
+        public async Task<IActionResult> ListaPaciente()
         {
             var usuarios = await _dataContext.Usuarios.ToListAsync();
 
             return View(usuarios);
         }
 
-        public IActionResult Cadastrar(CadastroPacienteDTO request)
+
+
+        public IActionResult CadastrarPaciente(CadastroPacienteDTO request)
         {
 
             var usuarios = _dataContext.Usuarios.FirstOrDefault(x => x.Email == request.Email);
@@ -99,7 +106,7 @@ namespace InScreening_sprint_2.Controllers
 
             _dataContext.Add(novoCadastro);
             _dataContext.SaveChanges();
-            return View("Login");
+            return View("LoginPage");
         
         }
 
@@ -111,16 +118,18 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Deletar(int id)
+
+        public IActionResult DeletarPaciente(int id)
         {
             var usuarios = _dataContext.Usuarios.Find(id);
 
             _dataContext.Remove(usuarios);
             _dataContext.SaveChanges();
-            return RedirectToAction("Lista");
+            return RedirectToAction("ListaPaciente");
         }
 
-        public async Task<IActionResult> Editar(int id)
+
+        public async Task<IActionResult> EditarPage(int id)
         {
 
             var User = await _dataContext.Usuarios.FindAsync(id);
@@ -129,7 +138,7 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Alterar(int id, CadastroPacienteDTO request)
+        public IActionResult AlterarPaciente(int id, CadastroPacienteDTO request)
         {
             var user = _dataContext.Usuarios.Find(id);
             
@@ -154,7 +163,7 @@ namespace InScreening_sprint_2.Controllers
             _dataContext.Update(user);
             _dataContext.SaveChanges();
 
-            return RedirectToAction("Lista", "User");
+            return RedirectToAction("ListaPaciente", "User");
         }
     }
 }

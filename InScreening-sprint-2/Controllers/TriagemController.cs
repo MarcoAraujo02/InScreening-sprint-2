@@ -31,7 +31,7 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Cadastrar(CadastroTriagemDTO request)
+        public IActionResult CadastrarTriagem(CadastroTriagemDTO request)
         {
 
             Triagem novaTriagem = new Triagem
@@ -55,23 +55,26 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ListaTr()
+
+
+        public async Task<IActionResult> ListaTriagem()
         {
             var triagem = await _dataContext.Triagem.ToListAsync();
 
             return View(triagem);
         }
 
-        public IActionResult Deletar(int id)
+
+        public IActionResult DeletarTriagem(int id)
         {
             var triagem = _dataContext.Triagem.Find(id);
 
              _dataContext.Remove(triagem);
             _dataContext.SaveChanges();
-            return RedirectToAction("ListaTr");
+            return RedirectToAction("ListaTriagem");
         }
 
-        public async Task<IActionResult> Editar(int id)
+        public async Task<IActionResult> EditarPage(int id)
         {
 
             var triagem = await _dataContext.Triagem.FindAsync(id);
@@ -80,7 +83,7 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult Alterar(int id, CadastroTriagemDTO request)
+        public IActionResult AlterarTriagem(int id, CadastroTriagemDTO request)
         {
             var triagem = _dataContext.Triagem.Find(id);
 
@@ -93,7 +96,7 @@ namespace InScreening_sprint_2.Controllers
             _dataContext.Update(triagem);
             _dataContext.SaveChanges();
 
-            return RedirectToAction("ListaTr", "Triagem");
+            return RedirectToAction("ListaTriagem", "Triagem");
         }
     }
 }
