@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InScreening_sprint_2.Models
 {
@@ -71,6 +72,24 @@ namespace InScreening_sprint_2.Models
 
         [Required]
         public string Numero { get; set; }
+
+
+
+        [Required]
+        public int triagemId { get; set; }
+
+
+        [ForeignKey("triagemId")]
+        public Triagem? triagem { get; set; }
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -21,7 +21,7 @@ namespace InScreening_sprint_2.Models
         public string Prioridade { get; set; }
 
 
+        public ICollection<User> usuario { get; set; }
 
-    
     }
 }

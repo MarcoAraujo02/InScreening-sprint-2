@@ -8,7 +8,7 @@ namespace InScreening_sprint_2.Models
         public int Id { get; set; }
 
         [Required]
-        public string Cnpj { get; set; }
+        public int Cnpj { get; set; }
 
         [Required]
         public string status { get; set; }
