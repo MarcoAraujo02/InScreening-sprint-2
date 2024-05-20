@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model InScreening_sprint_2.Models.Funcionario
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,7 +20,7 @@
         }
 
         .titulo2 {
-            margin-left: 33%
+            margin-left: 24%
         }
 
         .btn {
@@ -38,35 +39,23 @@
     </style>
 </head>
 <body>
-
-      
-
-    <form asp-controller="Funcionario" asp-action="CadastrarFuncionario" method="post">
-
-        <h1 class="titulo2">Casdastro do funcionario</h1>
+    <h1 class="titulo2">Dados do Funcionário Logado</h1>
+    <div class="formulario">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="titulo">Nome</label>
-            <input n name="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-
+            <input name="Nome" type="text" class="form-control" id="exampleInputEmail1" value="@Model.Nome" readonly>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Cpf</label>
-            <input name="Cpf" type="text" class="form-control" id="exampleInputPassword1" required>
-
+            <input name="Cpf" type="text" class="form-control" id="exampleInputPassword1" value="@Model.Cpf" readonly>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Email</label>
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
-
+            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" value="@Model.Email" readonly>
         </div>
-    
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <br />
-        <br />
-
-    </form>
+    </div>
 </body>
+</html>
 </html>

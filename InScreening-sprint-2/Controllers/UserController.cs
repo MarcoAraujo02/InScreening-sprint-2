@@ -32,13 +32,24 @@ namespace InScreening_sprint_2.Controllers
 
 
 
-        public IActionResult Index()
+        public IActionResult index()
         {
             return View("~/ Views/User/index.cshtml");
         }
 
 
+        public IActionResult DadosPaciente(int id)
+        {
+            var usuario = _dataContext.Usuarios.Find(id);
 
+            if (usuario == null)
+            {
+                return BadRequest("Id do Paciente para puxar os dados foram perdidos, no momentos ainda a session nao foi implementada");
+            }
+            return View(usuario);
+        }
+
+   
         public IActionResult LogarPaciente(LoginPacienteDTO request)
         {
             var find = _dataContext.Usuarios.FirstOrDefault(x => x.Email == request.Email);
@@ -52,10 +63,14 @@ namespace InScreening_sprint_2.Controllers
                 return BadRequest("Senha inválida");
             }
 
-        
-            return View("~/Views/Triagem/index.cshtml");
+            ViewBag.UsuarioId = find.Id;
+
+            return View("~/Views/User/index.cshtml");
         }
 
+
+
+    
 
 
         public IActionResult CadastroPage()

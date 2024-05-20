@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en"
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,19 +30,13 @@
     </style>
 </head>
 <body>
-    <h2 class="titulo">Cadastrados</h2>
-
-
+    <h2 class="titulo">Pagina Inicial</h2>
+    <br />
+    <br />
+    <a class="btn-link" href="@Url.Action("DadosPaciente", "User", new { id = ViewBag.UsuarioId })">Ver Meus Dados</a>
     <br />
     <br />
     <br />
-            
-            <a class="btn-link" href="@Url.Action("DadosFuncionario", "Funcionario", new { id = ViewBag.FuncionarioId })">Ver Meus Dados</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="User" asp-action="ListaPaciente">Listar todos os Pacientes</a>
-            <br /><br />
-          <br />
-            <a class="btn-link" asp-area="" asp-controller="Triagem" asp-action="ListaTriagem">Listar todas as Triagens</a>
+    <a class="btn-link" asp-area="" asp-controller="Triagem" asp-action="Triagem">Realizar Triagem</a>
 </body>
 </html>

@@ -35,7 +35,21 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
-   
+
+        public IActionResult DadosFuncionario(int id)
+        {
+            // Busca o funcionário pelo ID
+            var funcionario = _dataContext.Funcionario.Find(id);
+
+            if (funcionario == null)
+            {
+                return BadRequest("Id do Funcionario para puxar os dados foram perdidos, no momentos ainda a session nao foi implementada");
+            }
+
+            // Passa o funcionário encontrado para a view
+            return View(funcionario);
+        }
+
         public IActionResult CadastrarFuncionario(CadastroFuncionarioDTO request)
         {
 
@@ -65,22 +79,25 @@ namespace InScreening_sprint_2.Controllers
             return View();
         }
 
+
         public IActionResult LogarFuncionario(LoginFuncionarioDTO request)
         {
-            var find = _dataContext.Funcionario.FirstOrDefault(x => x.Email == request.Email);
-            if (find == null)
+            var funcionario = _dataContext.Funcionario.FirstOrDefault(x => x.Email == request.Email);
+
+            if (funcionario == null)
             {
-                return BadRequest("Email invalido");
+                return BadRequest("Email inválido");
             }
-            if (find.Cpf != request.Cpf)
+
+            if (funcionario.Cpf != request.Cpf)
             {
-                return BadRequest("Cpf invalido");
+                return BadRequest("CPF inválido");
             }
+
+            ViewBag.FuncionarioId = funcionario.Id;
+
             return View("Index");
         }
-
-
-
         public async Task<IActionResult> ListaFuncionario()
         {
             var funcionario = await _dataContext.Funcionario.ToListAsync();

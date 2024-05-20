@@ -36,16 +36,12 @@ namespace InScreening_sprint_2.Controllers
 
             Triagem novaTriagem = new Triagem
             {
-                DataInicio = request.Datainicio,
-                DataFim = request.Datafim,
                 Sintomas = request.Sintomas,
-                Prioridade = request.Prioridade,
-
             };
 
             _dataContext.Add(novaTriagem);
             _dataContext.SaveChanges();
-            return View("~/Views/Triagem/index.cshtml");
+            return View("~/Views/User/index.cshtml");
 
         }
 

@@ -19,21 +19,19 @@
         }
 
         .titulo2 {
-            margin-left: 24%
+            margin-left: 36%
         }
 
         .btn {
             margin-left: 48%
         }
 
-        .criar {
-            margin-left: 45%
-        }
+  
 
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 15%
+
+           .escrever{
+            width:800px;
+            margin-left: 29%;
         }
     </style>
 </head>
@@ -42,26 +40,15 @@
 
     <form class="formulario" asp-controller="Triagem"  asp-action="CadastrarTriagem" method="post">
         <h1 class="titulo2">Triagem</h1>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Data Inicio</label>
-            <input name="Datainicio" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Data fim</label>
-            <input name="Datafim" type="text" class="form-control" id="exampleInputPassword1">
+        <br />
 
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Sintomas</label>
-            <input name="Sintomas" type="text" class="form-control" id="exampleInputPassword1">
+            <input class="escrever" name="Sintomas" type="text" class="form-control" id="exampleInputPassword1">
 
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Prioridade</label>
-            <input name="Prioridade" type="text" class="form-control" id="exampleInputPassword1">
-
-        </div>
+ 
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />

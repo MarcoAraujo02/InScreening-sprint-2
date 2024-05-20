@@ -33,10 +33,14 @@
     <h2 class="titulo">Triagem</h2>
     <br />
     <br />
-    <a class="btn-link" asp-area="" asp-controller="Triagem" asp-action="Triagem">Realizar Exames</a>
+    <a class="btn-link" href="@Url.Action("DadosUsuario", "User", new { id = ViewBag.UsuarioId })">Ver Meus Dados</a>
     <br />
     <br />
     <br />
     <a class="btn-link" asp-area="" asp-controller="Triagem" asp-action="ListaTriagem">Atendimentos</a>
+    <br />
+    <br />
+    <br />
+    <a class="btn-link" asp-area="" asp-controller="Triagem" asp-action="Triagew">Realizar Triagem</a>
 </body>
 </html>

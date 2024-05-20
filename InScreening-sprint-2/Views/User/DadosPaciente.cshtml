@@ -1,0 +1,144 @@
+﻿@model InScreening_sprint_2.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Inscreening</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <style>
+
+        .titulo {
+            margin-left: 49%
+        }
+
+        .btn {
+            margin-left: 47%
+        }
+
+
+
+        .titulo2 {
+            margin-left: 33%;
+        }
+
+        .titulo3 {
+            margin-left: 46%
+        }
+
+        .escrever {
+            width: 800px;
+            margin-left: 21%;
+        }
+    </style>
+</head>
+<body>
+      <h1 class="titulo2">Dados Do Paciente Logado</h1>
+        <br />
+
+        <div class="mb-3">
+            <label for="" class="titulo">Nome</label>
+            <input class="escrever" name="Nome" type="text" class="form-control" aria-describedby="emailHelp" value="@Model.Nome" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Cpf</label>
+            <input class="escrever" name="Cpf" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Cpf" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Email address</label>
+            <input class="escrever" name="Email" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Email" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Senha</label>
+            <input class="escrever" name="Senha" type="text" class="form-control" required value="@Model.Senha" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Rg</label>
+            <input class="escrever" name="Rg" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Rg" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Orgao Emissor</label>
+            <input class="escrever" name="Orgao_emissor" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Orgao_emissor" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Filiacao Paterna</label>
+            <input class="escrever" name="F_paterna" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.F_paterna" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Filiacao Materna</label>
+            <input class="escrever" name="F_materna" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.F_materna" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Data de nascimento</label>
+            <input class="escrever" name="Nascimento" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Nascimento" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Sexo</label>
+            <input class="escrever" name="Sexo" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Sexo" readonly>
+        </div>
+        <br />
+
+
+        <h3 class="titulo3">Endereco</h3>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Cep</label>
+            <input class="escrever" name="Cep" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Cep" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Rua</label>
+            <input class="escrever" name="Rua" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Rua" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Cidade</label>
+            <input class="escrever" name="Cidade" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Cidade" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Complemento</label>
+            <input class="escrever" name="Complemento" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Complemento" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Estado</label>
+            <input class="escrever" name="Estado" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Estado" readonly>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="titulo">Numero</label>
+            <input class="escrever" name="Numero" type="text" class="form-control" aria-describedby="emailHelp" required value="@Model.Numero" readonly>
+        </div>
+
+        
+
+
+</body>
+</html>
