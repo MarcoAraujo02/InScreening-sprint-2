@@ -38,14 +38,18 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult DadosPaciente(int id)
+        public IActionResult DadosPaciente()
         {
+            var id = HttpContext.Session.GetInt32("_Id");
             var usuario = _dataContext.Usuarios.Find(id);
 
             if (usuario == null)
             {
                 return BadRequest("Id do Paciente para puxar os dados foram perdidos, no momentos ainda a session nao foi implementada");
             }
+
+            ViewBag.Usuario = usuario;
+
             return View(usuario);
         }
 
@@ -63,7 +67,8 @@ namespace InScreening_sprint_2.Controllers
                 return BadRequest("Senha inválida");
             }
 
-            ViewBag.UsuarioId = find.Id;
+
+            HttpContext.Session.SetInt32("_Id", find.Id);
 
             return View("~/Views/User/index.cshtml");
         }

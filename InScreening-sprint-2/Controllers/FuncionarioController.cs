@@ -36,9 +36,10 @@ namespace InScreening_sprint_2.Controllers
         }
 
 
-        public IActionResult DadosFuncionario(int id)
+        public IActionResult DadosFuncionario()
         {
             // Busca o funcionário pelo ID
+            var id = HttpContext.Session.GetInt32("_Id");
             var funcionario = _dataContext.Funcionario.Find(id);
 
             if (funcionario == null)
@@ -46,6 +47,7 @@ namespace InScreening_sprint_2.Controllers
                 return BadRequest("Id do Funcionario para puxar os dados foram perdidos, no momentos ainda a session nao foi implementada");
             }
 
+            ViewBag.funcionario = funcionario;
             // Passa o funcionário encontrado para a view
             return View(funcionario);
         }
@@ -94,7 +96,7 @@ namespace InScreening_sprint_2.Controllers
                 return BadRequest("CPF inválido");
             }
 
-            ViewBag.FuncionarioId = funcionario.Id;
+            HttpContext.Session.SetInt32("_Id", funcionario.Id);
 
             return View("Index");
         }
